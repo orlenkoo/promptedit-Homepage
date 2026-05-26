@@ -1,9 +1,6 @@
 # Prompt Edit — Landing Page
 
 A modern, single-page marketing site for an AI-tools marketplace, built with **Vue 3**, **Vite**, and **Tailwind CSS**. The page is fully responsive, animation-rich, and built from small, swappable section components so the copy and visuals can be updated quickly.
-
-> This project is a design exercise / template inspired by AI-marketplace product pages. Copy, pricing, testimonials, and imagery in this repo are placeholders — replace them with your own before going to production.
-
 ---
 
 ## Tech stack
@@ -114,66 +111,3 @@ To re-order, hide, or duplicate sections, edit `src/App.vue`:
 ```
 
 ---
-
-## Customizing the brand
-
-### Colors and fonts
-
-All brand tokens live in **`tailwind.config.js`** under `theme.extend`:
-
-```js
-colors: {
-  brand: { 50: '#eef4ff', /* ... */ 900: '#1d2e8c' },
-  accent: { 400: '#ffd166', 500: '#ffb703', 600: '#fb8500' },
-},
-fontFamily: {
-  sans: ['Inter', ...],
-  display: ['Poppins', 'Inter', ...],
-},
-boxShadow: {
-  glow: '0 10px 40px -10px rgba(59, 101, 255, 0.45)',
-  'glow-lg': '0 25px 60px -15px rgba(59, 101, 255, 0.55)',
-},
-```
-
-Change those values and every component automatically picks up the new palette.
-
-### Reusable utility classes (`src/style.css`)
-
-| Class | Use for |
-| --- | --- |
-| `.btn-primary` / `.btn-secondary` | Primary / secondary CTA buttons |
-| `.container-page` | Centered max-width content wrapper |
-| `.section` | Standard top/bottom padding for sections |
-| `.eyebrow` / `.eyebrow-dark` | Small uppercase label above headlines |
-| `.gradient-text` | Brand gradient applied to text |
-| `.bg-grid` / `.bg-dots` | Subtle background patterns |
-| `.tilt`, `.float-a/b/c`, `.glow-ring`, `.toast-pop` | Decorative motion accents |
-
----
-
-## Custom directives
-
-### `v-reveal` — scroll-triggered fade/slide
-
-Adds a fade-up animation when the element enters the viewport. Honors `prefers-reduced-motion`.
-
-```vue
-<div v-reveal>I appear when scrolled into view.</div>
-<div v-reveal="{ delay: 200 }">I appear 200ms later.</div>
-```
-
-### `v-count-up` — animated number ticker
-
-Counts a numeric element from 0 to its target value once it scrolls in. Preserves any suffix (`+`, `%`, `/5`, etc.) and comma formatting.
-
-```vue
-<div v-count-up>10,000+</div>
-<div v-count-up="{ value: '4.9 / 5', duration: 1600 }">4.9 / 5</div>
-```
-
-Both directives are registered in `src/main.js`.
-
----
-
-
